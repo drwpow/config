@@ -23,6 +23,16 @@ base64() {
 alias gs='git status'
 
 # ----------------------------------------------------
+#   gzip
+# ----------------------------------------------------
+
+gzip() {
+  if(tar -cvzf "$1.gzip" $1); then
+    echo "gzipped $1.gzip"
+  fi
+}
+
+# ----------------------------------------------------
 #   MIME
 # ----------------------------------------------------
 
@@ -146,6 +156,7 @@ eval "$(rbenv init -)"
 # ----------------------------------------------------
 
 alias be='bundle exec'
-alias bms='bundle exec middleman s'
-alias br='bundle exec rake'
-alias brs='bundle exec rails s'
+alias ms='bundle exec middleman s'
+alias rc='bundle exec rails c'
+alias rk='bundle exec rake'
+alias rs='bundle exec rails s -b 0.0.0.0'
