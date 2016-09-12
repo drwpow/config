@@ -4,7 +4,7 @@ export PATH=/usr/local/sbin:$PATH
 #   Autojump
 # ----------------------------------------------------
 
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # ----------------------------------------------------
 #   Base64
@@ -31,6 +31,12 @@ gzip() {
     echo "gzipped $1.gzip"
   fi
 }
+
+# ----------------------------------------------------
+#   ls
+# ----------------------------------------------------
+
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 # ----------------------------------------------------
 #   MIME
