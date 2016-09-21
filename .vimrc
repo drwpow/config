@@ -65,6 +65,7 @@ let g:ctrlp_prompt_mappings = {
 let mapleader = "\<Space>"
 map <C-\> :NERDTreeToggle<CR>
 map <C-l> :CtrlP<CR>
+let g:multi_cursor_prev_key='<C-s>'
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w<CR>
