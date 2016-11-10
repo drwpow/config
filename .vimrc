@@ -9,7 +9,7 @@ syntax on
 set backspace=indent,eol,start
 set bs=2
 set colorcolumn=72
-set clipboard=unnamed
+set clipboard=unnamed           " copy/paste to/from global clipboard
 set cursorline
 set expandtab
 set fillchars+=vert:\
@@ -55,22 +55,44 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+" Key Commands
+let mapleader = "\<Space>"       " Remap Leader to Space
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>x :x<CR>
+vnoremap <F5> :sort<CR>
+
+map <C-u> :Ack<space>
+map <C-l> :CtrlP<CR>
 let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("h")': ['<c-d>', '<c-cr>', '<c-s>'],
   \ 'AcceptSelection("v")': ['<c-k>'],
   \ 'PrtSelectMove("j")':   ['<down>'],
   \ 'PrtSelectMove("k")':   ['<up>']
   \ }
-
-" Key Commands
-let mapleader = "\<Space>"
-map <C-\> :NERDTreeToggle<CR>
-map <C-l> :CtrlP<CR>
-map <C-u> :Ack<space>
-map <C-;> :undo<cr>
 let g:multi_cursor_prev_key='<C-s>'
-nnoremap <Leader>o :CtrlP<CR>
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>x :x<CR>
-vnoremap <F5> :sort<CR>
+
+map <C-\> :NERDTreeToggle<CR>    " Ctrl + \ shortcut for NERDTree
+nnoremap <Leader>o :CtrlP<CR>    " Leader + o shortcut for open
+
+" Syntax
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
