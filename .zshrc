@@ -26,14 +26,25 @@ BULLETTRAIN_PROMPT_SEPARATE_LINE=false
 ZSH_THEME="bullet-train"
 
 # Plugins
-plugins=(brew git node osx postgres rbenv z zsh-syntax-highlighting)
+plugins=(brew git node osx postgres rbenv thefuck z zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
+
+# Non-Oh My Zsh-Plugins
+path+=("$HOME/.yarn/bin")
+path+=("$HOME/.themekit")
+path+=("$(yarn global bin)")
+export PATH
 
 # Aliases
 alias gc='git checkout'
 alias gs='git status'
+alias oops='fuck'
 alias rc='bundle exec rails c'
 alias rk='bundle exec rake'
+alias rg='bundle exec rails g migration'
 alias rs='bundle exec rails s -b 0.0.0.0'
-alias vi='vim'
+alias v='vim'
 alias \.='ofd'
+alias w='webpack'
+alias ws='webpack-dev-server'
+alias y='yarn'
