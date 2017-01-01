@@ -36,6 +36,8 @@ set showmatch
 set smartcase
 set smarttab
 set softtabstop=2
+set splitbelow                  " Split top-to-bottom
+set splitright                  " Split left-to-right
 set tabstop=2
 set ttimeoutlen=1
 set ttyfast
@@ -46,24 +48,31 @@ if exists("&undofile")
   set undodir=~/.vim/tmp/undo//,~/tmp//,/tmp//
 endif
 
-" Packages
-let g:airline_theme='light'
-let g:airline_powerline_fonts=1
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
-endif
+" Plugins
+let g:airline_theme = 'light'      " Set Airline theme
+let g:airline_powerline_fonts = 1  " Use hacked fonts
+let g:ctrlp_show_hidden = 1        " CtrlP show hidden files (unless ignored)
+let g:ctrlp_dotfiles = 1           " CtrlP show dotfiles (unless ignored)
+let g:ackprg = 'ag --nogroup --nocolor --column' " Run Silver Searcher as Ack (bug)
+let g:ctrlp_user_command = 'ag %s -l --nogroup --nocolor -g ""'
+let g:ctrlp_use_caching = 0        " Disabled cache because Silver Searcher
+let NERDTreeShowHidden = 1         " NERDTree show hidden by default
 
 " Key Commands
 let mapleader = "\<Space>"       " Remap Leader to Space
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>x :x<CR>
-vnoremap <F5> :sort<CR>
+vnoremap <F5> :sort<CR>          " Sublime-style sort
+nnoremap <C-e> :e#<CR>           " Switch between last edited buffer
+nnoremap <C-v> :bnext<CR>        " Next Buffer
+nnoremap <C-h> <C-w><C-h>        " Move left split
+nnoremap <C-j> <C-w><C-j>        " Move down split
+nnoremap <C-k> <C-w><C-k>        " Move up split
+nnoremap <C-l> <C-w><C-l>        " Move right split
+nnoremap <C-q> :bd<CR>           " Close current buffer
 
 map <C-u> :Ack<space>
-map <C-l> :CtrlP<CR>
 let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("h")': ['<c-d>', '<c-cr>', '<c-s>'],
   \ 'AcceptSelection("v")': ['<c-k>'],
@@ -71,7 +80,6 @@ let g:ctrlp_prompt_mappings = {
   \ 'PrtSelectMove("k")':   ['<up>']
   \ }
 let g:multi_cursor_prev_key='<C-s>'
-
 map <C-\> :NERDTreeToggle<CR>    " Ctrl + \ shortcut for NERDTree
 nnoremap <Leader>o :CtrlP<CR>    " Leader + o shortcut for open
 
@@ -85,7 +93,8 @@ let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint', 'jshint']
+let g:syntastic_vue_checkers = ['eslint']
 
 let g:syntastic_error_symbol = '❌'
 let g:syntastic_style_error_symbol = '⁉️'
