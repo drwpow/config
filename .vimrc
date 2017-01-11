@@ -1,87 +1,119 @@
-" Pathogen
-execute pathogen#infect()
-filetype plugin indent on
+" Use vim settings, rather than vi settings (much better!)
+" This must be first, because it changes other options as a side effect.
+set nocompatible
 
-" Theme
-syntax on
+filetype plugin indent on
 
 " Config
 set backspace=indent,eol,start
-set bs=2
-set colorcolumn=72
-set clipboard=unnamed           " copy/paste to/from global clipboard
+set clipboard=unnamed           " Paste to/from global clipboard
+set colorcolumn=80
 set cursorline
-set expandtab
-set fillchars+=vert:\
-set foldcolumn=1
-set hidden
+set expandtab                   " die you stupid tabs
+set hidden                      " show unnecessary whitespace chars
 set history=1000                " remember more commands and search history
-set hlsearch
-set ignorecase
-set laststatus=2
-set linebreak
-set list listchars=tab:»\ ,trail:·
-set mousehide
+set foldcolumn=1                " fixes weird indent/paint bug
+set incsearch                   " show search matches as you type
+set laststatus=2                " always show status bar
+set lazyredraw                  " don’t update display when executing macros
+set list listchars=tab:»\ ,trail:·" expose evil tabs and trailing whitespace
+set mousehide                   " hide mouse while typing
 set nobackup                    " no backup files; it's 70's style cluttering
-set noesckeys
-set noshowmode
+set noerrorbells                " no really, don’t beep
+set nomodeline                  " disable mode lines (security measure)
 set noswapfile                  " do not write annoying intermediate swap files,
 set nowb
-set nowrap
-set number
-set ruler
-set scrolloff=4
-set shiftwidth=2
-set showmatch
-set smartcase
-set smarttab
+set nowrap                      " don’t wrap lines
+set number                      " show line numebers
+set numberwidth=5
+set ruler                       " show ruler
+set scrolljump=5                " reduce redraws by scrolling 5 lines at a time
+set scrolloff=0                 " don't scroll until you hit the top/bottom of the screen
+set shiftround                  " use multiple of shiftwidth for `<` and `>`
+set shiftwidth=2                " number of spaces to use for autoindenting
+set showmatch                   " set show matching parentheses
+set showmode                    " always show what mode we’re currently editing in
+set splitbelow                  " open top to bottom (natural)
+set splitright                  " open left to right (natural)
 set softtabstop=2
-set splitbelow                  " Split top-to-bottom
-set splitright                  " Split left-to-right
 set tabstop=2
-set ttimeoutlen=1
-set ttyfast
 set undolevels=1000             " use many muchos levels of undo
-set visualbell
+set visualbell                  " don’t beep
 if exists("&undofile")
   set undofile                  " keep a persistent undo file
   set undodir=~/.vim/tmp/undo//,~/tmp//,/tmp//
 endif
 
-" Plugins
-let g:airline_theme = 'light'      " Set Airline theme
-let g:airline_powerline_fonts = 1  " Use hacked fonts
-let g:ctrlp_show_hidden = 1        " CtrlP show hidden files (unless ignored)
-let g:ctrlp_dotfiles = 1           " CtrlP show dotfiles (unless ignored)
-let g:ackprg = 'ag --nogroup --nocolor --column' " Run Silver Searcher as Ack (bug)
-let g:ctrlp_user_command = 'ag %s -l --nogroup --nocolor -g ""'
-let g:ctrlp_use_caching = 0        " Disabled cache because Silver Searcher
-let NERDTreeShowHidden = 1         " NERDTree show hidden by default
+" Vim Plug
+call plug#begin('~/.vim/plugged')
+
+" Ack
+Plug 'mileszs/ack.vim'
+
+" Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" CtrlP
+Plug 'ctrlpvim/ctrlp.vim'
+
+" Color Schemes
+Plug 'flazz/vim-colorschemes'
+
+" Easy Align
+Plug 'junegunn/vim-easy-align'
+
+" NERD Commenter
+Plug 'scrooloose/nerdcommenter'
+
+" NERDTree
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+" Syntastic
+Plug 'vim-syntastic/syntastic'
+Plug 'mtscout6/syntastic-local-eslint.vim'
+
+" Vue
+Plug 'posva/vim-vue', { 'for': 'vue' }
+
+call plug#end()
+
+" Plugin Config
+
+" Ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'   " Run Silver Searcher as Ack
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = "ag %s -i --nocolor --nogroup --ignore '.git' --ignore '.DS_Store' --ignore 'bower_components' --ignore 'node_modules' --hidden -g ''"
+endif
+
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme='light'
+
+" NERDTree
+let NERDTreeHighlightCursorline=1
+let NERDTreeMouseMode=2      " Allow mouse
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowFiles=1
+let NERDTreeShowHidden = 1        " NERDTree show hidden by default
+let NERDTreeShowHidden=1
 
 " Key Commands
 let mapleader = "\<Space>"       " Remap Leader to Space
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>x :x<CR>
+nnoremap <Leader>a :noh<CR>      " Kill Highlight
+nnoremap <Leader>g :gqq<CR>      " Align
+nnoremap <Leader>q :bd<CR>       " Close current buffer
+nnoremap <Leader>w :w<CR>        " Write
+nnoremap <Leader>x :x<CR>        " Write + Quit
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR> " Use K to search for word under cursor
 vnoremap <F5> :sort<CR>          " Sublime-style sort
-nnoremap <C-e> :e#<CR>           " Switch between last edited buffer
-nnoremap <C-v> :bnext<CR>        " Next Buffer
-nnoremap <C-h> <C-w><C-h>        " Move left split
-nnoremap <C-j> <C-w><C-j>        " Move down split
-nnoremap <C-k> <C-w><C-k>        " Move up split
-nnoremap <C-l> <C-w><C-l>        " Move right split
-nnoremap <C-q> :bd<CR>           " Close current buffer
-
-map <C-u> :Ack<space>
-let g:ctrlp_prompt_mappings = {
-  \ 'AcceptSelection("h")': ['<c-d>', '<c-cr>', '<c-s>'],
-  \ 'AcceptSelection("v")': ['<c-k>'],
-  \ 'PrtSelectMove("j")':   ['<down>'],
-  \ 'PrtSelectMove("k")':   ['<up>']
-  \ }
-let g:multi_cursor_prev_key='<C-s>'
+nnoremap <C-E> :e#<CR>           " Switch between last edited buffer
+nnoremap <C-h> <C-w>h            " Easier split movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 map <C-\> :NERDTreeToggle<CR>    " Ctrl + \ shortcut for NERDTree
-nnoremap <Leader>o :CtrlP<CR>    " Leader + o shortcut for open
 
 " Syntax
 set statusline+=%#warningmsg#
@@ -105,3 +137,8 @@ highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
+
+" Theme
+set background=light
+syntax on
+highlight LineNr ctermfg=lightGrey
