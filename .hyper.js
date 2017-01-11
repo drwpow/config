@@ -13,10 +13,10 @@ module.exports = {
     cursorShape: 'UNDERLINE',
 
     // color of the text
-    foregroundColor: '#000000',
+    foregroundColor: '#000',
 
     // terminal background color
-    backgroundColor: '#ffffff',
+    backgroundColor: '#fff',
 
     // border color (window, tabs)
     borderColor: '#333',
@@ -24,7 +24,7 @@ module.exports = {
     // custom css to embed in the main window
     css: `
       .tabs_title {color: #000;}
-      .tabs_list .tab_text {color: #000;}
+      .tabs_list .tab_text {color: #ccc;}
       .tabs_list .tab_text.tab_textActive {color: #000}
     `,
 
@@ -49,24 +49,43 @@ module.exports = {
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
-    colors: {
-      black: '#2e464b',
-      red: '#ff7070',
-      green: '#04fa66',
-      yellow: '#ffd044',
-      blue: '#0067ff',
-      magenta: '#7835ff',
-      cyan: '#00e4ba',
-      white: '#dde9e3',
-      lightBlack: '#56695f',
-      lightRed: '#f495b1',
-      lightGreen: '#3f7360',
-      lightYellow: '#ffe289',
-      lightBlue: '#5bbdff',
-      lightMagenta: '#ff8dbb',
-      lightCyan: '#9dfeff',
-      lightWhite: '#ffffff'
-    },
+    //colors: {
+      //black: '#394c4e',
+      //red: '#ff5e5e',
+      //green: '#33ff00',
+      //yellow: '#ffff00',
+      //blue: '#0027ff',
+      //magenta: '#cc00ff',
+      //cyan: '#32efc6',
+      //white: '#d0d0d0',
+      //lightBlack: '#808080',
+      //lightRed: '#ff0000',
+      //lightGreen: '#33ff00',
+      //lightYellow: '#ffff00',
+      //lightBlue: '#0066ff',
+      //lightMagenta: '#cc00ff',
+      //lightCyan: '#00ffff',
+      //lightWhite: '#ffffff'
+    //},
+
+    colors: [
+      '#073642',
+      '#dc322f',
+      '#33ff00',
+      '#fff000',
+      '#0027ff',
+      '#cc00ff',
+      '#32efc6',
+      '#eee8d5',
+      '#002b36',
+      '#cb4b16',
+      '#586e75',
+      '#657b83',
+      '#839496',
+      '#6c71c4',
+      '#93a1a1',
+      '#fdf6e3'
+    ],
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
@@ -98,6 +117,7 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
+    'hyperlinks',
   ],
 
   // in development, you can create a directory under
