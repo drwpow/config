@@ -6,12 +6,7 @@ BULLETTRAIN_PROMPT_ORDER=(
   context
   dir
   nvm
-  custom
-  virtualenv
-  go
   git
-  hg
-  cmd_exec_time
 )
 BULLETTRAIN_DIR_BG=cyan
 BULLETTRAIN_DIR_FG=black
@@ -38,13 +33,18 @@ export PATH
 
 # Aliases
 alias gc='git checkout'
+alias gp='git pull --rebase'
 alias gs='git status'
 alias oops='fuck'
 alias rc='bundle exec rails c'
-alias rk='noglob bundle exec rake'
 alias rg='bundle exec rails g migration'
+alias rk='noglob bundle exec rake'
 alias rs='bundle exec rails s -b 0.0.0.0'
 alias v='vim'
+alias t='tmux'
+alias ti='~/.tmux/plugins/tpm/bin/install_plugins'
+alias tu='~/.tmux/plugins/tpm/bin/update_plugins all'
+alias tc='~/.tmux/plugins/tpm/bin/clean_plugins'
 alias \.='ofd'
 alias w='webpack'
 alias ws='webpack-dev-server'
