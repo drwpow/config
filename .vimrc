@@ -10,9 +10,10 @@ set clipboard=unnamed           " Paste to/from global clipboard
 set colorcolumn=80
 set cursorline
 set expandtab                   " die you stupid tabs
+set foldcolumn=1                " fixes weird indent/paint bug
 set hidden                      " show unnecessary whitespace chars
 set history=1000                " remember more commands and search history
-set foldcolumn=1                " fixes weird indent/paint bug
+set ignorecase                  " case-insensitive search
 set incsearch                   " show search matches as you type
 set laststatus=2                " always show status bar
 set lazyredraw                  " don’t update display when executing macros
@@ -33,6 +34,7 @@ set shiftround                  " use multiple of shiftwidth for `<` and `>`
 set shiftwidth=2                " number of spaces to use for autoindenting
 set showmatch                   " set show matching parentheses
 set showmode                    " always show what mode we’re currently editing in
+set smartcase                   " IDK some search thing
 set splitbelow                  " open top to bottom (natural)
 set splitright                  " open left to right (natural)
 set softtabstop=2
@@ -48,14 +50,14 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Ack
-Plug 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim', { 'on': 'Ack' }
 
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " CtrlP
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 
 " Color Schemes
 Plug 'flazz/vim-colorschemes'
@@ -63,18 +65,25 @@ Plug 'flazz/vim-colorschemes'
 " Easy Align
 Plug 'junegunn/vim-easy-align'
 
+" Handlebars
+Plug 'mustache/vim-mustache-handlebars'
+
 " NERD Commenter
 Plug 'scrooloose/nerdcommenter'
 
 " NERDTree
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
+" Surround
+Plug 'tpope/vim-surround'
+
 " Syntastic
 Plug 'vim-syntastic/syntastic'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 
 " Vue
-Plug 'posva/vim-vue', { 'for': 'vue' }
+Plug 'BenoitZugmeyer/eslint-plugin-html'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
@@ -92,12 +101,12 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='light'
 
 " NERDTree
-let NERDTreeHighlightCursorline=1
-let NERDTreeMouseMode=2      " Allow mouse
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowFiles=1
+let NERDTreeHighlightCursorline = 1
+let NERDTreeMouseMode = 2      " Allow mouse
+let NERDTreeQuitOnOpen = 1
+let NERDTreeShowFiles = 1
 let NERDTreeShowHidden = 1        " NERDTree show hidden by default
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 1
 
 " Key Commands
 let mapleader = "\<Space>"       " Remap Leader to Space
@@ -113,6 +122,7 @@ nnoremap <C-h> <C-w>h            " Easier split movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <C-p> :CtrlP<CR>        " Dupe of existing shortcut; needed for Vim Plug perf
 map <C-\> :NERDTreeToggle<CR>    " Ctrl + \ shortcut for NERDTree
 
 " Syntax
@@ -126,12 +136,11 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint', 'jshint']
-let g:syntastic_vue_checkers = ['eslint']
 
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
+"let g:syntastic_error_symbol = '❌'       " Unicode is dope but Hyper chokes
+"let g:syntastic_style_error_symbol = '⁉️'
+"let g:syntastic_warning_symbol = '⚠️'
+"let g:syntastic_style_warning_symbol = '💩'
 
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
