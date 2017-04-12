@@ -3,8 +3,8 @@ module.exports = {
     "browser": true,
     "node": true
   },
-  "extends": ["eslint:recommended"],
-  "plugins": ["import", "vue"],
+  "extends": ["eslint:recommended", "plugin:node/recommended"],
+  "plugins": ["import", "node"],
   "parserOptions": {
     "ecmaVersion": 8,
     "sourceType": "module",
