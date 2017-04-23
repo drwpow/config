@@ -17,12 +17,13 @@ BULLETTRAIN_GIT_FG=black
 BULLETTRAIN_NVM_BG=black
 BULLETTRAIN_NVM_FG=green
 BULLETTRAIN_NVM_SHOW=true
-BULLETTRAIN_PROMPT_CHAR="➼"
-#BULLETTRAIN_PROMPT_SEPARATE_LINE=false
+#BULLETTRAIN_PROMPT_CHAR="➼"
+BULLETTRAIN_PROMPT_CHAR=""
+BULLETTRAIN_PROMPT_SEPARATE_LINE=false
 ZSH_THEME="bullet-train"
 
 # Plugins
-plugins=(brew git node osx thefuck yarn z zsh-syntax-highlighting)
+plugins=(aws brew git node osx thefuck yarn z zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Non-Oh My Zsh-Plugins
@@ -32,22 +33,23 @@ path+=("~/.nodenv/bin")
 export PATH
 
 # Aliases
+alias gad='pbpaste | git apply -v'
 alias gc='git checkout'
-alias gp='git pull --rebase'
+alias gci='git commit -v'
+alias gl='git pull --rebase'
+alias gpf='git push --force --force-with-lease'
+alias gpl='git push --force --force-with-lease'
+alias gr='git rebase'
+alias grc='git rebase --continue'
+alias grs='git rebase --skip'
 alias gs='git status'
-alias oops='fuck'
+alias n='node'
 alias rc='bundle exec rails c'
 alias rg='bundle exec rails g migration'
 alias rk='noglob bundle exec rake'
 alias rs='bundle exec rails s -b 0.0.0.0'
 alias v='vim'
-alias t='tmux'
-alias ti='~/.tmux/plugins/tpm/bin/install_plugins'
-alias tu='~/.tmux/plugins/tpm/bin/update_plugins all'
-alias tc='~/.tmux/plugins/tpm/bin/clean_plugins'
 alias \.='ofd'
-alias w='webpack'
-alias ws='webpack-dev-server'
 alias y='yarn'
 
 # Nodev & Rbenv (must be last)
