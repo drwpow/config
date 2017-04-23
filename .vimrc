@@ -65,6 +65,9 @@ Plug 'flazz/vim-colorschemes'
 " Easy Align
 Plug 'junegunn/vim-easy-align'
 
+" Emmett
+Plug 'mattn/emmet-vim'
+
 " Handlebars
 Plug 'mustache/vim-mustache-handlebars'
 
@@ -79,11 +82,11 @@ Plug 'tpope/vim-surround'
 
 " Syntastic
 Plug 'vim-syntastic/syntastic'
-Plug 'mtscout6/syntastic-local-eslint.vim'
 
 " Vue
 Plug 'BenoitZugmeyer/eslint-plugin-html'
 Plug 'posva/vim-vue'
+Plug 'sekel/vim-vue-syntastic'
 
 call plug#end()
 
@@ -131,11 +134,23 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+let g:syntastic_css_checkers = ['csslint']
+let g:syntastic_handlebars_checkers = ['vim-mustache-handlebars']
 let g:syntastic_javascript_checkers = ['eslint', 'jshint']
+let g:syntastic_loc_list_height = 5
+let g:syntastic_vue_checkers = ['eslint']
+
+let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
+if matchstr(local_eslint, "^\/\\w") == ''
+    let local_eslint = getcwd() . "/" . local_eslint
+endif
+if executable(local_eslint)
+    let g:syntastic_javascript_eslint_exec = local_eslint
+    let g:syntastic_vue_eslint_exec = local_eslint
+endif
 
 "let g:syntastic_error_symbol = '❌'       " Unicode is dope but Hyper chokes
 "let g:syntastic_style_error_symbol = '⁉️'
@@ -151,3 +166,6 @@ highlight link SyntasticStyleWarningSign SignColumn
 set background=light
 syntax on
 highlight LineNr ctermfg=lightGrey
+
+" Git
+autocmd Filetype gitcommit setlocal spell textwidth=72
