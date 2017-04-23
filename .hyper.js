@@ -30,7 +30,7 @@ module.exports = {
 
     // custom css to embed in the terminal window
     termCSS: `
-      span.unicode-node {line-height:1.35;}
+      span.unicode-node {display: inline;}
     `,
 
     // set to `true` if you're using a Linux set up
