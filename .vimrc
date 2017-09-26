@@ -35,16 +35,18 @@ set shiftwidth=2                " number of spaces to use for autoindenting
 set showmatch                   " set show matching parentheses
 set showmode                    " always show what mode we’re currently editing in
 set smartcase                   " IDK some search thing
+set softtabstop=2
 set splitbelow                  " open top to bottom (natural)
 set splitright                  " open left to right (natural)
-set softtabstop=2
 set tabstop=2
 set undolevels=1000             " use many muchos levels of undo
 set visualbell                  " don’t beep
+set wildignore+=*/.git/*,*/tmp/*,*/node_modules/*,*.swp " ignore some files
 if exists("&undofile")
   set undofile                  " keep a persistent undo file
   set undodir=~/.vim/tmp/undo//,~/tmp//,/tmp//
 endif
+au BufWritePost * :silent! :syntax sync fromstart<cr>:redraw!<cr> "Auto-repaint
 
 " Vim Plug
 call plug#begin('~/.vim/plugged')
@@ -62,9 +64,6 @@ Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 " Color Schemes
 Plug 'flazz/vim-colorschemes'
 
-" Easy Align
-Plug 'junegunn/vim-easy-align'
-
 " Emmett
 Plug 'mattn/emmet-vim'
 
@@ -73,9 +72,6 @@ Plug 'mustache/vim-mustache-handlebars'
 
 " NERD Commenter
 Plug 'scrooloose/nerdcommenter'
-
-" NERDTree
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 " Surround
 Plug 'tpope/vim-surround'
@@ -93,23 +89,15 @@ call plug#end()
 " Plugin Config
 
 " Ack
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'   " Run Silver Searcher as Ack
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = "ag %s -i --nocolor --nogroup --ignore '.git' --ignore '.DS_Store' --ignore 'bower_components' --ignore 'node_modules' --hidden -g ''"
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
 endif
 
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme='light'
-
-" NERDTree
-let NERDTreeHighlightCursorline = 1
-let NERDTreeMouseMode = 2      " Allow mouse
-let NERDTreeQuitOnOpen = 1
-let NERDTreeShowFiles = 1
-let NERDTreeShowHidden = 1        " NERDTree show hidden by default
-let NERDTreeShowHidden = 1
 
 " Key Commands
 let mapleader = "\<Space>"       " Remap Leader to Space
@@ -126,7 +114,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-p> :CtrlP<CR>        " Dupe of existing shortcut; needed for Vim Plug perf
-map <C-\> :NERDTreeToggle<CR>    " Ctrl + \ shortcut for NERDTree
 
 " Syntax
 set statusline+=%#warningmsg#
