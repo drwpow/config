@@ -1,9 +1,11 @@
 export ZSH=$HOME/.oh-my-zsh
 
+# Default User
+DEFAULT_USER=$USER
+
 # Theme
 BULLETTRAIN_PROMPT_ORDER=(
   status
-  context
   dir
   nvm
   git
