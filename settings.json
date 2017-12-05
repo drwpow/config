@@ -4,7 +4,6 @@
     "editor.autoIndent": true,
     "editor.cursorStyle": "underline",
     "editor.fontFamily": "iA Writer Duospace,Papyrus",
-    "editor.quickSuggestions": false,
     "editor.parameterHints": false,
     "editor.renderLineHighlight": "none",
     "editor.renderWhitespace": "boundary",
@@ -19,8 +18,7 @@
       "html",
       "vue"
     ],
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
+    "extensions.ignoreRecommendations": true,
     "files.exclude": {
         ".next/": true,
         ".tmp/": true,
@@ -32,13 +30,16 @@
         "**/node_modules": true,
         "**/tmp": true
     },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "html.autoClosingTags": false,
     "keyboard.dispatch": "keyCode",
+    "reason.formatOnSave": true,
+    "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
     "vim.useSystemClipboard": true,
     "window.nativeTabs": true,
     "window.zoomLevel": 0,
     "workbench.colorTheme": "Kay Dark",
     "workbench.sideBar.location": "left",
-    "workbench.startupEditor": "newUntitledFile",
-    "extensions.ignoreRecommendations": true
+    "workbench.startupEditor": "newUntitledFile"
   }
