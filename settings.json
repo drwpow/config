@@ -39,6 +39,7 @@
   "html.autoClosingTags": false,
   "keyboard.dispatch": "keyCode",
   "reason.formatOnSave": true,
+  "search.useRipgrep": true,
   "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
   "vim.useSystemClipboard": true,
   "window.nativeTabs": true,
