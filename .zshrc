@@ -1,4 +1,5 @@
 export ZSH=$HOME/.oh-my-zsh
+export GOPATH=$HOME/go
 
 # Default User
 DEFAULT_USER=$USER
@@ -25,7 +26,7 @@ BULLETTRAIN_PROMPT_SEPARATE_LINE=false
 ZSH_THEME="bullet-train"
 
 # Plugins
-plugins=(aws brew git node thefuck yarn z zsh-syntax-highlighting)
+plugins=(aws brew git node yarn z zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Non-Oh My Zsh-Plugins
@@ -35,6 +36,7 @@ export PATH
 
 # Aliases
 alias code='code-insiders'
+alias du='docker-compose up -d'
 alias gad='pbpaste | git apply -v'
 alias gci='git commit -v'
 alias gl='git pull --rebase'
@@ -42,9 +44,5 @@ alias gpf='git push --force --force-with-lease'
 alias gpl='git push --force --force-with-lease'
 alias gs='git status'
 
-# Nodev & Rbenv (must be last)
+# Nodev
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# OPAM
-/Users/drew/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
