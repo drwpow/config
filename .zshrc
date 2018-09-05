@@ -26,12 +26,12 @@ BULLETTRAIN_PROMPT_SEPARATE_LINE=false
 ZSH_THEME="bullet-train"
 
 # Plugins
-plugins=(aws brew git node yarn z zsh-syntax-highlighting)
+plugins=(aws brew git golang node yarn z zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Non-Oh My Zsh-Plugins
-path+=("/usr/local/bin")
-path+=("~/.nodenv/bin")
+path+=($GOPATH/bin)
+path+=(~/.nodenv/bin)
 export PATH
 
 # Aliases
@@ -43,6 +43,7 @@ alias gl='git pull --rebase'
 alias gpf='git push --force --force-with-lease'
 alias gpl='git push --force --force-with-lease'
 alias gs='git status'
+alias grm='git rebase -i origin/master'
 
 # Nodev
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
