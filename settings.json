@@ -1,26 +1,21 @@
 {
   "editor.acceptSuggestionOnEnter": "off",
-  "editor.autoClosingBrackets": false,
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
   "editor.autoIndent": true,
   "editor.cursorStyle": "underline",
-  "editor.formatOnSave": true,
   "editor.fontFamily": "IBM Plex Mono,Papyrus",
-  "editor.parameterHints": false,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "boundary",
-  "editor.rulers": [
-    80
-  ],
+  "editor.rulers": [80],
+  "editor.suggestOnTriggerCharacters": false,
   "editor.snippetSuggestions": "none",
   "editor.tabSize": 2,
   "editor.wordWrap": "off",
   "eslint.trace.server": "messages",
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "html",
-    "vue"
-  ],
+  "eslint.validate": ["javascript", "javascriptreact", "html", "vue"],
   "extensions.ignoreRecommendations": true,
   "files.exclude": {
     ".next/": true,
@@ -36,15 +31,19 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "html.autoClosingTags": false,
-  "jest.showCoverageOnLoad": true,
+  "javascript.autoClosingTags": false,
   "keyboard.dispatch": "keyCode",
   "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
   "vim.useSystemClipboard": true,
-  "window.nativeTabs": true,
   "window.zoomLevel": 0,
   "workbench.editor.tabSizing": "shrink",
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Polaris Theme",
-  "window.clickThroughInactive": false
+  "window.clickThroughInactive": false,
+  "[markdown]": {
+    "editor.wordWrap": "off"
+  },
+  "workbench.statusBar.visible": true,
+  "workbench.activityBar.visible": true
 }
