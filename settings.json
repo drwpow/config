@@ -1,4 +1,5 @@
 {
+  "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingQuotes": "never",
@@ -7,10 +8,10 @@
   "editor.fontFamily": "IBM Plex Mono,Papyrus",
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
+  "editor.parameterHints.enabled": false, // I can’t see!
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [80],
-  "editor.suggestOnTriggerCharacters": false,
   "editor.snippetSuggestions": "none",
   "editor.tabSize": 2,
   "editor.wordWrap": "off",
@@ -41,9 +42,9 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Polaris Theme",
   "window.clickThroughInactive": false,
+  "workbench.statusBar.visible": true,
+  "workbench.activityBar.visible": true,
   "[markdown]": {
     "editor.wordWrap": "off"
-  },
-  "workbench.statusBar.visible": true,
-  "workbench.activityBar.visible": true
+  }
 }
