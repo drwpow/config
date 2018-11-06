@@ -15,8 +15,13 @@
   "editor.snippetSuggestions": "none",
   "editor.tabSize": 2,
   "editor.wordWrap": "off",
-  "eslint.trace.server": "messages",
-  "eslint.validate": ["javascript", "javascriptreact", "html", "vue"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "html",
+    "vue"
+  ],
   "extensions.ignoreRecommendations": true,
   "files.exclude": {
     ".next/": true,
@@ -38,13 +43,9 @@
   "vim.useSystemClipboard": true,
   "window.zoomLevel": 0,
   "workbench.editor.tabSizing": "shrink",
-  "workbench.sideBar.location": "left",
-  "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Polaris Theme",
-  "window.clickThroughInactive": false,
-  "workbench.statusBar.visible": true,
-  "workbench.activityBar.visible": true,
   "[markdown]": {
     "editor.wordWrap": "off"
-  }
+  },
+  "workbench.startupEditor": "newUntitledFile"
 }
