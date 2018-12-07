@@ -1,4 +1,6 @@
 {
+  "[markdown]": { "editor.wordWrap": "off" },
+  "color-highlight.markerType": "dot",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.autoClosingBrackets": "never",
@@ -19,6 +21,7 @@
     "javascript",
     "javascriptreact",
     "typescript",
+    "typescriptreact",
     "html",
     "vue"
   ],
@@ -40,12 +43,10 @@
   "javascript.autoClosingTags": false,
   "keyboard.dispatch": "keyCode",
   "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
+  "typescript.autoClosingTags": false,
   "vim.useSystemClipboard": true,
   "window.zoomLevel": 0,
-  "workbench.editor.tabSizing": "shrink",
   "workbench.colorTheme": "Polaris Theme",
-  "[markdown]": {
-    "editor.wordWrap": "off"
-  },
+  "workbench.editor.tabSizing": "shrink",
   "workbench.startupEditor": "newUntitledFile"
 }
