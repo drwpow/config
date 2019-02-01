@@ -26,6 +26,7 @@
     "vue"
   ],
   "extensions.ignoreRecommendations": true,
+  "files.associations": { "*.css": "postcss" },
   "files.exclude": {
     ".next/": true,
     ".tmp/": true,
@@ -40,10 +41,13 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "html.autoClosingTags": false,
+  "html.format.endWithNewline": true,
   "javascript.autoClosingTags": false,
   "keyboard.dispatch": "keyCode",
+  "liveshare.audio.joinCallBehavior": "accept",
   "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
   "typescript.autoClosingTags": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.useSystemClipboard": true,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Polaris Theme",
