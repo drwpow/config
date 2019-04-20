@@ -1,13 +1,12 @@
-{
   "[markdown]": { "editor.wordWrap": "off" },
-  "color-highlight.markerType": "dot",
+  "color-highlight.markerType": "none",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingQuotes": "never",
   "editor.autoIndent": true,
   "editor.cursorStyle": "underline",
-  "editor.fontFamily": "IBM Plex Mono,Papyrus",
+  "editor.fontFamily": "Perplexed,Papyrus",
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.parameterHints.enabled": false, // I can’t see!
@@ -17,16 +16,27 @@
   "editor.snippetSuggestions": "none",
   "editor.tabSize": 2,
   "editor.wordWrap": "off",
-  "eslint.validate": [
+  "emmet.showAbbreviationSuggestions": false,
+  "emmet.showExpandedAbbreviation": "never",
+  "emmet.excludeLanguages": [
+    "markdown",
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "html",
     "vue"
   ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": true,
-  "files.associations": { "*.css": "postcss" },
+  "files.associations": {
+    "*.svg": "html"
+  },
   "files.exclude": {
     ".next/": true,
     ".tmp/": true,
@@ -35,22 +45,22 @@
     "**/.git": true,
     "**/.sass-cache": true,
     "**/bower_components": true,
-    "**/node_modules": true,
     "**/tmp": true
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+  "gitlens.defaultDateStyle": "absolute",
   "html.autoClosingTags": false,
   "html.format.endWithNewline": true,
   "javascript.autoClosingTags": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
   "keyboard.dispatch": "keyCode",
   "liveshare.audio.joinCallBehavior": "accept",
-  "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
+  "terminal.integrated.fontFamily": "Perplexed",
   "typescript.autoClosingTags": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.useSystemClipboard": true,
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "Polaris Theme",
   "workbench.editor.tabSizing": "shrink",
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "none",
 }
