@@ -1,5 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 export GOPATH=$HOME/go
+export GO111MODULE=on
 
 # Default User
 DEFAULT_USER=$USER
@@ -26,7 +27,7 @@ BULLETTRAIN_PROMPT_SEPARATE_LINE=false
 ZSH_THEME="bullet-train"
 
 # Plugins
-plugins=(aws brew git golang node yarn z zsh-syntax-highlighting)
+plugins=(aws brew git golang node yarn z zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Non-Oh My Zsh-Plugins
@@ -35,8 +36,6 @@ path+=(~/.nodenv/bin)
 export PATH
 
 # Aliases
-alias code='code-insiders'
-alias du='docker-compose up -d'
 alias gad='pbpaste | git apply -v'
 alias gci='git commit -v'
 alias gl='git pull --rebase'
@@ -47,3 +46,4 @@ alias grm='git rebase -i origin/master'
 
 # Nodev
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
+export PATH="$PATH./node_modules/"
