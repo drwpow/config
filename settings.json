@@ -1,3 +1,4 @@
+{
   "[markdown]": { "editor.wordWrap": "off" },
   "color-highlight.markerType": "none",
   "editor.acceptSuggestionOnCommitCharacter": false,
