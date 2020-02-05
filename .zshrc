@@ -31,6 +31,9 @@ DEFAULT_USER=$USER
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 path+=(~/.nodenv/bin)
 
+# Git
+export GIT_TERMINAL_PROMPT=1
+
 # Go
 export GOPATH=$HOME/Sites/go
 export PATH=$PATH:$GOPATH/bin
