@@ -2,6 +2,7 @@
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
   "editor.cursorStyle": "underline",
   "editor.fontFamily": "'JetBrains Mono', Papyrus",
   "editor.fontLigatures": true,
