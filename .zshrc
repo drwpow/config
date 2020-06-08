@@ -39,7 +39,7 @@ export GOPATH=$HOME/Sites/go
 export PATH=$PATH:$GOPATH/bin
 
 # Aliases
-alias code='code insiders'
+alias code='code-insiders'
 alias gcb='git checkout -b '
 alias gcm='git checkout master'
 alias gf='git fetch'
