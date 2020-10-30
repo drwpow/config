@@ -1,8 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+ZSH_DISABLE_COMPFIX=true
 
+# Bullet Train Settings (must come before ZSH_THEME)
 prompt_emoji() {
-  prompt_segment black white "✨"
+  prompt_segment black white "🎏"
 }
 BULLETTRAIN_PROMPT_ORDER=(emoji status dir nvm git)
 BULLETTRAIN_PROMPT_ADD_NEWLINE=false
@@ -20,23 +22,18 @@ BULLETTRAIN_NVM_SHOW=true
 
 ZSH_THEME="bullet-train"
 
-# Plugins
-plugins=(git node z zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting z)
+
 source $ZSH/oh-my-zsh.sh
 
 # Default User
 DEFAULT_USER=$USER
 
-# nodenv
-if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
-path+=(~/.nodenv/bin)
+# fnm
+eval "$(fnm env)"
 
 # Git
 export GIT_TERMINAL_PROMPT=1
-
-# Go
-export GOPATH=$HOME/Sites/go
-export PATH=$PATH:$GOPATH/bin
 
 # Aliases
 alias code='code-insiders'
