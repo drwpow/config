@@ -38,12 +38,19 @@ export GIT_TERMINAL_PROMPT=1
 # Aliases
 alias code='code-insiders'
 alias gcb='git checkout -b '
-alias gcm='git checkout master'
+alias gcm='git checkout main'
 alias gf='git fetch'
 alias gl='git pull --rebase'
 alias gpf='git push --force --force-with-lease'
+alias gpo='git remote prune origin'
 alias grc='git rebase --continue'
 alias grh='git reset --hard HEAD'
-alias grm='git rebase -i origin/master'
+alias grm='git rebase -i origin/main'
 alias grs='git rebase --skip'
 alias gs='git status'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/drew/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/drew/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/drew/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/drew/google-cloud-sdk/completion.zsh.inc'; fi
