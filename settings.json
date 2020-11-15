@@ -1,5 +1,4 @@
 {
-  "customizeUI.titleBar": "inline",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.autoClosingBrackets": "never",
@@ -22,17 +21,16 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "html.autoClosingTags": false,
+  "html.format.enable": false,
   "html.format.endWithNewline": true,
   "javascript.autoClosingTags": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "telemetry.enableTelemetry": false,
   "typescript.autoClosingTags": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "vim.useSystemClipboard": true,
-  "window.titleBarStyle": "native",
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "Cold Horizon",
   "workbench.editor.restoreViewState": false,
   "workbench.editor.showIcons": false,
   "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Cold Horizon"
 }
