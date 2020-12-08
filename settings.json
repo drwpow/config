@@ -4,7 +4,8 @@
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingQuotes": "never",
   "editor.cursorStyle": "underline",
-  "editor.fontFamily": "'JetBrains Mono', Papyrus",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "'JetBrains Mono NL', Papyrus",
   "editor.formatOnSave": true,
   "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
@@ -32,5 +33,9 @@
   "workbench.editor.restoreViewState": false,
   "workbench.editor.showIcons": false,
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Cold Horizon"
+  "workbench.colorTheme": "Ariake Dark",
+  "extensions.ignoreRecommendations": true,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust"
+  }
 }
