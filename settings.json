@@ -39,6 +39,12 @@
   "workbench.editor.restoreViewState": false,
   "workbench.editor.showIcons": false,
   "workbench.startupEditor": "newUntitledFile",
+  "[css]": {
+    "editor.hover.enabled": false
+  },
+  "[scss]": {
+    "editor.hover.enabled": false
+  },
   "[go]": {
     "editor.defaultFormatter": "golang.go",
     "editor.insertSpaces": false,
@@ -49,6 +55,6 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false
   },
   "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust"
+    "editor.defaultFormatter": "matklad.rust-analyzer"
   }
 }
