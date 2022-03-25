@@ -1,10 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-ZSH_DISABLE_COMPFIX=true
 
 # Bullet Train Settings (must come before ZSH_THEME)
 prompt_emoji() {
-  prompt_segment black white "🎏"
+  prompt_segment black white "⛩ "
 }
 BULLETTRAIN_PROMPT_ORDER=(emoji status dir nvm git)
 BULLETTRAIN_PROMPT_ADD_NEWLINE=false
@@ -30,7 +29,7 @@ source $ZSH/oh-my-zsh.sh
 DEFAULT_USER=$USER
 
 # fnm
-eval "$(fnm env)"
+eval "$(fnm env --use-on-cd)"
 
 # Git
 export GIT_TERMINAL_PROMPT=1
