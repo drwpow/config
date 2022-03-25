@@ -47,9 +47,3 @@ alias grh='git reset --hard HEAD'
 alias grm='git rebase -i origin/main'
 alias grs='git rebase --skip'
 alias gs='git status'
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/drew/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/drew/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/drew/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/drew/google-cloud-sdk/completion.zsh.inc'; fi
