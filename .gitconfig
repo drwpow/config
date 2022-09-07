@@ -1,0 +1,12 @@
+[user]
+        name = Drew Powers
+        email = drew@pow.rs
+[core]
+        excludesfile = /Users/drew/.gitignore_global
+[init]
+        defaultBranch = main
+[commit]
+        gpgsign = true
+        template = /Users/drew/.stCommitMsg
+[push]
+        autoSetupRemote = true
