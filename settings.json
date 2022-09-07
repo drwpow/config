@@ -7,6 +7,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "'JetBrains Mono NL', Papyrus",
   "editor.formatOnSave": true,
+  "editor.largeFileOptimizations": false,
   "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
   "editor.parameterHints.enabled": false,
@@ -23,14 +24,14 @@
   "files.insertFinalNewline": true,
   "files.maxMemoryForLargeFilesMB": 8192,
   "files.trimTrailingWhitespace": true,
-  "go.toolsManagement.autoUpdate": true,
   "html.autoClosingTags": false,
+  "html.autoCreateQuotes": false,
   "html.format.enable": false,
-  "html.format.endWithNewline": true,
   "javascript.autoClosingTags": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "scss.completion.triggerPropertyValueCompletion": false,
   "security.workspace.trust.enabled": false,
+  "svelte.enable-ts-plugin": true,
   "telemetry.telemetryLevel": "off",
   "terminal.external.osxExec": "iTerm.app",
   "typescript.autoClosingTags": false,
@@ -39,22 +40,13 @@
   "workbench.editor.restoreViewState": false,
   "workbench.editor.showIcons": false,
   "workbench.startupEditor": "newUntitledFile",
-  "[css]": {
-    "editor.hover.enabled": false
-  },
-  "[scss]": {
-    "editor.hover.enabled": false
-  },
-  "[go]": {
-    "editor.defaultFormatter": "golang.go",
-    "editor.insertSpaces": false,
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": true
-    },
-    "editor.suggest.snippetsPreventQuickSuggestions": false
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
   },
   "[rust]": {
-    "editor.defaultFormatter": "matklad.rust-analyzer"
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
   }
 }
