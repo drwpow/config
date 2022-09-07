@@ -3,7 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Bullet Train Settings (must come before ZSH_THEME)
 prompt_emoji() {
-  prompt_segment black white "⛩ "
+  prompt_segment black white "🏄‍♂️ "
 }
 BULLETTRAIN_PROMPT_ORDER=(emoji status dir nvm git)
 BULLETTRAIN_PROMPT_ADD_NEWLINE=false
@@ -25,14 +25,15 @@ plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting z)
 
 source $ZSH/oh-my-zsh.sh
 
-# Default User
-DEFAULT_USER=$USER
-
 # fnm
 eval "$(fnm env --use-on-cd)"
 
 # Git
 export GIT_TERMINAL_PROMPT=1
+
+# pnpm
+export PNPM_HOME="/Users/drew/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
 # Aliases
 alias code='code-insiders'
