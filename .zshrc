@@ -27,7 +27,7 @@ BULLETTRAIN_NVM_SHOW=true
 
 ZSH_THEME="bullet-train"
 
-plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting z)
+plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting node z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -40,6 +40,16 @@ export GIT_TERMINAL_PROMPT=1
 # pnpm
 export PNPM_HOME="/Users/drew/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+
+# bun
+[ -s "/Users/drew/.bun/_bun" ] && source "/Users/drew/.bun/_bun"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # Aliases
 alias code='code-insiders'
