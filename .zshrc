@@ -3,7 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Bullet Train Settings (must come before ZSH_THEME)
 prompt_emoji() {
-  prompt_segment black white "🏄‍♂️"
+  prompt_segment black white "𝖕"
 }
 BULLETTRAIN_PROMPT_ORDER=(emoji dir nvm git cmd_exec_time)
 BULLETTRAIN_PROMPT_ADD_NEWLINE=false
@@ -36,6 +36,10 @@ eval "$(fnm env --use-on-cd)"
 
 # Git
 export GIT_TERMINAL_PROMPT=1
+
+# Go
+export PATH=$PATH:$(go env GOPATH)/bin
+export GOPATH="/Users/drew/go"
 
 # pnpm
 export PNPM_HOME="/Users/drew/Library/pnpm"
