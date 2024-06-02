@@ -1,23 +1,18 @@
 [user]
-        name = Drew Powers
-        email = drew@pow.rs
+    name = Drew Powers
+    email = drew@pow.rs
 [core]
-        excludesfile = /Users/drew/.gitignore_global
+    excludesfile = /Users/drew/.gitignore_global
 [init]
-        defaultBranch = main
+    defaultBranch = main
 [commit]
-        gpgsign = true
-        template = /Users/drew/.stCommitMsg
+    gpgsign = true
+    template = /Users/drew/.stCommitMsg
 [push]
-        autoSetupRemote = true
+    autoSetupRemote = true
 [features]
-	manyFiles = true
+    manyFiles = true
 [fetch]
-	prune = true
+    prune = true
 [pull]
-	ff = only
-[filter "lfs"]
-        clean = git-lfs clean -- %f
-        smudge = git-lfs smudge -- %f
-        process = git-lfs filter-process
-        required = true
+    ff = only

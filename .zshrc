@@ -1,59 +1,33 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# Bullet Train Settings (must come before ZSH_THEME)
-prompt_emoji() {
-  prompt_segment black white "𝖕"
-}
-BULLETTRAIN_PROMPT_ORDER=(emoji dir nvm git cmd_exec_time)
-BULLETTRAIN_PROMPT_ADD_NEWLINE=false
-BULLETTRAIN_PROMPT_SEPARATE_LINE=false
-BULLETTRAIN_PROMPT_CHAR=""
-BULLETTRAIN_EXEC_TIME_BG=239
-BULLETTRAIN_EXEC_TIME_FG=black
-BULLETTRAIN_EXEC_TIME_ELAPSED=0
-BULLETTRAIN_DIR_BG=57
-BULLETTRAIN_DIR_FG=black
-BULLETTRAIN_GIT_BG=41
-BULLETTRAIN_GIT_FG=236
-BULLETTRAIN_GIT_CLEAN=""
-BULLETTRAIN_GIT_DIRTY=" ⚠︎"
-BULLETTRAIN_GIT_COLORIZE_DIRTY=true
-BULLETTRAIN_GIT_COLORIZE_DIRTY_BG_COLOR=214
-BULLETTRAIN_GIT_EXTENDED=false
-BULLETTRAIN_NVM_BG=black
-BULLETTRAIN_NVM_FG=41
-BULLETTRAIN_NVM_SHOW=true
+# omz
+export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="bullet-train"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' frequency 13
 
-plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting node z)
+plugins=(git brew fast-syntax-highlighting z zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # fnm
 eval "$(fnm env --use-on-cd)"
 
-# Git
-export GIT_TERMINAL_PROMPT=1
-
-# Go
-export PATH=$PATH:$(go env GOPATH)/bin
-export GOPATH="/Users/drew/go"
-
 # pnpm
 export PNPM_HOME="/Users/drew/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
-# bun
-[ -s "/Users/drew/.bun/_bun" ] && source "/Users/drew/.bun/_bun"
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 
 # Aliases
 alias code='code-insiders'

@@ -1,5 +1,4 @@
 {
-  "colorize.enable_search_variables": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.accessibilitySupport": "off",
@@ -7,22 +6,21 @@
   "editor.autoClosingQuotes": "never",
   "editor.cursorStyle": "underline",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "'SF Mono', Papyrus",
+  "editor.fontFamily": "Fragment Mono, Papyrus",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 11,
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   "editor.insertSpaces": false,
   "editor.matchBrackets": "never",
-  "editor.minimap.enabled": false,
   "editor.parameterHints.enabled": false,
   "editor.renderWhitespace": "boundary",
   "editor.suggestOnTriggerCharacters": false,
   "editor.tabSize": 2,
   "editor.wordWrap": "off",
-  "emmet.showExpandedAbbreviation": "never",
   "explorer.autoReveal": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "extensions.ignoreRecommendations": true,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "git.openRepositoryInParentFolders": "always",
@@ -32,23 +30,12 @@
   "javascript.autoClosingTags": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "liveshare.accessibility.soundsEnabled": false,
-  "scss.completion.triggerPropertyValueCompletion": false,
   "security.workspace.trust.enabled": false,
-  "svelte.enable-ts-plugin": true,
   "telemetry.telemetryLevel": "off",
   "terminal.external.osxExec": "iTerm.app",
   "typescript.autoClosingTags": false,
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Morita",
-  "workbench.editor.restoreViewState": false,
-  "workbench.editor.showIcons": false,
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "newUntitledFile",
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  },
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
-  }
+  "workbench.startupEditor": "newUntitledFile"
 }
