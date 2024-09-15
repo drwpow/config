@@ -6,7 +6,8 @@
   "editor.autoClosingQuotes": "never",
   "editor.cursorStyle": "underline",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "Fragment Mono, Papyrus",
+  "editor.detectIndentation": false,
+  "editor.fontFamily": "Departure Mono, Papyrus",
   "editor.fontLigatures": false,
   "editor.fontSize": 11,
   "editor.formatOnSave": true,
@@ -24,6 +25,12 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "git.openRepositoryInParentFolders": "always",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
   "html.autoClosingTags": false,
   "html.autoCreateQuotes": false,
   "html.format.enable": false,
@@ -36,6 +43,16 @@
   "typescript.autoClosingTags": false,
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.colorTheme": "Bearded Theme Arc Blueberry",
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
 }

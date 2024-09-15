@@ -12,7 +12,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 zstyle ':omz:update' mode auto      # update automatically without asking
 zstyle ':omz:update' frequency 13
 
-plugins=(git brew fast-syntax-highlighting z zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
+plugins=(git brew fast-syntax-highlighting node z zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
