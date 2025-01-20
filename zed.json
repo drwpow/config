@@ -1,0 +1,42 @@
+{
+  "buffer_font_family": "Departure Mono",
+  "buffer_font_size": 11,
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "notification_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "chat_panel": {
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "terminal": {
+    "font_family": "MesloLGS NF",
+    "font_size": 11,
+    "line_height": "standard"
+  },
+  "formatter": {
+    "language_server": {
+      "name": "biome"
+    }
+  },
+  "format_on_save": "language_server",
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Macchiato",
+    "dark": "One Dark"
+  },
+  "ui_font_family": "Departure Mono",
+  "ui_font_size": 13,
+  "use_autoclose": false,
+  "vim_mode": true
+}
