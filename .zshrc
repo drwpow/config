@@ -30,15 +30,14 @@ case ":$PATH:" in
 esac
 
 # Aliases
-alias code='code-insiders'
-alias gcb='git checkout -b '
-alias gcm='git checkout main'
+alias gca='git commit --amend'
+alias gg='git status'
 alias gf='git fetch'
 alias gl='git pull --rebase'
 alias gpf='git push --force --force-with-lease'
-alias gpo='git remote prune origin'
 alias grc='git rebase --continue'
 alias grh='git reset --hard HEAD'
 alias grm='git rebase -i origin/main'
 alias grs='git rebase --skip'
-alias gs='git status'
+alias gs='git switch'
+alias gsm='git switch main'
