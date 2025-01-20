@@ -3,6 +3,7 @@
   "editor.acceptSuggestionOnEnter": "off",
   "editor.accessibilitySupport": "off",
   "editor.autoClosingBrackets": "never",
+  "editor.autoClosingComments": "never",
   "editor.autoClosingQuotes": "never",
   "editor.cursorStyle": "underline",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -12,8 +13,9 @@
   "editor.fontSize": 11,
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
-  "editor.insertSpaces": false,
+  "editor.insertSpaces": true,
   "editor.matchBrackets": "never",
+  "editor.minimap.enabled": false,
   "editor.parameterHints.enabled": false,
   "editor.renderWhitespace": "boundary",
   "editor.suggestOnTriggerCharacters": false,
@@ -25,12 +27,6 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "git.openRepositoryInParentFolders": "always",
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  },
   "html.autoClosingTags": false,
   "html.autoCreateQuotes": false,
   "html.format.enable": false,
@@ -40,10 +36,11 @@
   "security.workspace.trust.enabled": false,
   "telemetry.telemetryLevel": "off",
   "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
   "typescript.autoClosingTags": false,
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Bearded Theme Arc Blueberry",
+  "workbench.colorTheme": "Bearded Theme feat. Melle Julie",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
   "[astro]": {
@@ -54,5 +51,8 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
   }
 }
