@@ -1,42 +1,95 @@
 {
-  "buffer_font_family": "Departure Mono",
-  "buffer_font_size": 11,
-  "collaboration_panel": {
-    "dock": "right"
-  },
-  "notification_panel": {
-    "dock": "right"
-  },
-  "git_panel": {
-    "dock": "right"
-  },
-  "chat_panel": {
-    "dock": "right"
-  },
-  "outline_panel": {
-    "dock": "right"
-  },
-  "project_panel": {
-    "dock": "right"
-  },
-  "terminal": {
-    "font_family": "MesloLGS NF",
-    "font_size": 11,
-    "line_height": "standard"
-  },
-  "formatter": {
-    "language_server": {
-      "name": "biome"
-    }
-  },
-  "format_on_save": "language_server",
-  "theme": {
-    "mode": "system",
-    "light": "Catppuccin Macchiato",
-    "dark": "One Dark"
-  },
-  "ui_font_family": "Departure Mono",
-  "ui_font_size": 13,
-  "use_autoclose": false,
-  "vim_mode": true
+	"agent": {
+		"enabled": false
+	},
+	"icon_theme": "VSCode Great Icons Theme",
+	"theme": "Cursor Dark",
+	"biome": {
+		"binary": {
+			"path": "/var/biome-2.2.3/bin/biome",
+			"arguments": ["lsp-proxy"]
+		}
+	},
+	"buffer_font_family": "Berkeley Mono",
+	"buffer_font_size": 11,
+	"collaboration_panel": {
+		"dock": "right"
+	},
+	"format_on_save": "on",
+	"git_panel": {
+		"dock": "right"
+	},
+	"indent_guides": {
+		"enabled": true
+	},
+	"formatter": {
+		"language_server": { "name": "biome" }
+	},
+	"languages": {
+		"Astro": {
+			"formatter": { "language_server": { "name": "biome" } },
+			"hard_tabs": false,
+			"tab_size": 2
+		},
+		"JavaScript": {
+			"formatter": { "language_server": { "name": "biome" } },
+			"hard_tabs": false,
+			"tab_size": 2
+		},
+		"JSON": {
+			"formatter": { "language_server": { "name": "biome" } },
+			"hard_tabs": false,
+			"tab_size": 2
+		},
+		"JSONC": {
+			"formatter": { "language_server": { "name": "biome" } },
+			"hard_tabs": false,
+			"tab_size": 2
+		},
+		"Markdown": {
+			"hard_tabs": false,
+			"show_edit_predictions": false,
+			"tab_size": 2
+		},
+		"Rust": {
+			"hard_tabs": false,
+			"tab_size": 4
+		},
+		"TSX": {
+			"formatter": { "language_server": { "name": "biome" } },
+			"hard_tabs": false,
+			"tab_size": 2
+		},
+		"TypeScript": {
+			"formatter": { "language_server": { "name": "biome" } },
+			"hard_tabs": false,
+			"tab_size": 2
+		}
+	},
+	"jsx_tag_auto_close": {
+		"enabled": false
+	},
+	"notification_panel": {
+		"dock": "right"
+	},
+	"outline_panel": {
+		"dock": "right"
+	},
+	"project_panel": {
+		"dock": "right"
+	},
+	"remove_trailing_whitespace_on_save": true,
+	"show_edit_predictions": false,
+	"show_whitespaces": "boundary",
+	"tab_size": 2,
+	"terminal": {
+		"font_family": "MesloLGS NF",
+		"font_size": 12,
+		"line_height": "standard"
+	},
+	"ui_font_family": ".SystemUIFont",
+	"ui_font_size": 15,
+	"use_system_window_tabs": true,
+	"use_autoclose": false,
+	"vim_mode": true
 }
