@@ -1,6 +1,6 @@
 {
-  "chat.agent.enabled": false,
-  "chat.commandCenter.enabled": false,
+  "chat.disableAIFeatures": true,
+  "diffEditor.maxComputationTime": 0,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.accessibilitySupport": "off",
@@ -21,6 +21,7 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlineSuggest.enabled": false,
   "editor.insertSpaces": true,
+  "editor.lineHeight": 1.625,
   "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
   "editor.parameterHints.enabled": false,
@@ -39,8 +40,9 @@
   "html.autoClosingTags": false,
   "html.autoCreateQuotes": false,
   "html.format.enable": false,
-  "javascript.autoClosingTags": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.autoClosingTags": false,
+  "js/ts.preferences.importModuleSpecifier": "relative",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   "security.workspace.trust.enabled": false,
   "svelte.enable-ts-plugin": true,
   "telemetry.editStats.enabled": false,
@@ -48,25 +50,7 @@
   "telemetry.telemetryLevel": "off",
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontFamily": "MesloLGS NF",
-  "typescript.autoClosingTags": false,
-  "typescript.preferences.importModuleSpecifier": "relative",
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Bearded Theme feat. Will",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
-  "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  },
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
-  }
 }
