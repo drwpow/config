@@ -2,7 +2,7 @@
 ZSH_THEME=agnoster
 export ZSH="$HOME/.oh-my-zsh"
 zstyle ':omz:update' mode auto
-plugins=(git node z brew fast-syntax-highlighting z)
+plugins=(command-execution-timer git node z brew fast-syntax-highlighting z)
 source $ZSH/oh-my-zsh.sh
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
@@ -25,3 +25,5 @@ alias grm='git rebase -i origin/main'
 alias grs='git rebase --skip'
 alias gs='git switch'
 alias gsm='git switch main'
+alias howlong='echo $COMMAND_EXECUTION_TIMER_DURATION_SECONDS'
+alias howslow='echo $COMMAND_EXECUTION_TIMER_DURATION_SECONDS'
